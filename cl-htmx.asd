@@ -6,7 +6,7 @@
   :license "MIT"
   :depends-on (#:spinneret
                #:uiop
-               #:cl-str
+               #:str
                #:parenscript)
   :serial t
   :components ((:module "src"
@@ -14,6 +14,6 @@
                  :serial t
                  :components ((:file "package")
                               (:file "core")
-                              (:file "htmx")
+                              (:file "javascript")
                               (:file "hyperscript")
-                              (:file "javascript")))))
+                              (:file "htmx")))))
