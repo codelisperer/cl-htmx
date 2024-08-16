@@ -10,7 +10,7 @@
            *bulma-cdn*
            *alpinejs-version*
            *alpinejs-cdn*
-           scripts
+           include-scripts
            bulma-link))
 
 (defpackage :htmx-user
