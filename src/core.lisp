@@ -20,13 +20,25 @@
 (defparameter *alpinejs-cdn* 
   (str:concat "https://cdn.jsdelivr.net/npm/alpinejs@" *alpinejs-version* "/dist/cdn.min.js"))
 
+(defparameter *react-version* "0.14.3")
+(defparameter *react-cdn*
+  (str:concat "https://fb.me/react-" *react-version* ".min.js"))
+
+(defun stylesheet-link (path-or-url)
+  (with-html (:link :rel "stylesheet" :href path-or-url)))
+
 (defun bulma-link ()
-  (with-html (:link :rel "stylesheet" :href *bulma-cdn*)))
+  (stylesheet-link *bulma-cdn*))
+
+(defun js-library-script (path-or-url)
+  (with-html (:script :src path-or-url)))
 
 (defun include-scripts (&key include-bulma? include-alpinejs?)
-  (with-html (:script :src *htmx-cdn*)
-             (:script :src *hyperscript-cdn*)
-             (if include-alpinejs? (:script :src *alpinejs-cdn*))
+  (with-html (js-library-script *htmx-cdn*)
+             (js-library-script *hyperscript-cdn*)
+             (if include-alpinejs? (js-library-script *alpinejs-cdn*))
              (if include-bulma? (bulma-link))))
+
+
 
 

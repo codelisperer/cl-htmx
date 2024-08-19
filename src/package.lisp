@@ -11,6 +11,8 @@
            *alpinejs-version*
            *alpinejs-cdn*
            include-scripts
+           stylesheet-link
+           js-library-script
            bulma-link))
 
 (defpackage :htmx-user
