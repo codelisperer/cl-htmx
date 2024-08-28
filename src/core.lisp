@@ -1,7 +1,7 @@
 (in-package :htmx)
 
 ;; HTMX JS artifacts need to be added to a rendered HTML page
-(defparameter *htmx-version* "2.0.1")
+(defparameter *htmx-version* "2.0.2")
 (defparameter *htmx-cdn*
   (str:concat "https://unpkg.com/htmx.org@" *htmx-version*))
 
